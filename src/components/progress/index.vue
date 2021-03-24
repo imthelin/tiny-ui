@@ -20,7 +20,7 @@
           </div>
           <!-- 目标悬浮值 -->
           <div :style="targetIndex" class="progress-inner-target">
-            <div class="progress-target-mark"/>
+            <div class="progress-target-mark" />
             <div class="target-pop">
               <span>{{ `目标续报率：${targetValue}%` }}</span>
             </div>
@@ -92,16 +92,10 @@ export default {
   width: 100%;
   position: relative;
   font-size: 14px;
-  background-color: linear-gradient(
-    90deg,
-    rgba(36, 117, 255, 0.52) 0%,
-    rgba(0, 26, 90, 0) 100%
-  );
-  // border: 1px solid rgb(50, 114, 187);
   box-shadow: inset 0 0 25px rgba(50, 114, 187, 0.5);
   .description-title {
     position: absolute;
-    top: 16px;
+    bottom: 16px;
     left: 24px;
     color: #00ffff;
     font-weight: 400;
@@ -113,6 +107,7 @@ export default {
     top: 50%;
     margin-top: -8px;
     padding: 0 10px;
+    box-sizing: border-box;
     .progress-inner-wrapper {
       // 两边伪元素小小箭头需要的保留宽度 46px
       width: calc(100% - 46px);
@@ -140,6 +135,37 @@ export default {
           transition-property: width, background-image;
           transition-duration: 2s;
           transition-timing-function: ease;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(
+              -45deg,
+              rgba(255, 255, 255, 0.2) 25%,
+              transparent 25%,
+              transparent 50%,
+              rgba(255, 255, 255, 0.2) 50%,
+              rgba(255, 255, 255, 0.2) 75%,
+              transparent 75%,
+              transparent 100%
+            );
+            z-index: 2;
+            background-size: 30px 30px;
+            border-radius: 20px 8px 8px 20px;
+            overflow: hidden;
+            animation: progress-move 2s linear infinite;
+          }
+          @keyframes progress-move {
+            0% {
+              background-position: 0 0;
+            }
+            100% {
+              background-position: 40px 50px;
+            }
+          }
         }
         .progress-inner-bar-pin {
           position: absolute;
@@ -205,7 +231,7 @@ export default {
         .progress-inner-target {
           position: absolute;
           height: 100%;
-          .progress-target-mark{
+          .progress-target-mark {
             position: absolute;
             width: 1px;
             height: 100%;
@@ -319,7 +345,7 @@ export default {
             &::before {
               content: '';
               position: absolute;
-              top: -1px;
+              top: 1px;
               left: 0px;
               border-left: 8px solid transparent;
               border-bottom: 8px solid #2f3b5b;
@@ -327,7 +353,7 @@ export default {
             &::after {
               content: '';
               position: absolute;
-              top: 0px;
+              top: 2px;
               left: 1px;
               border-left: 8px solid transparent;
               border-bottom: 8px solid #0f1c3f;
