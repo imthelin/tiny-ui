@@ -1,0 +1,83 @@
+.dialog-wrapper {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    // overflow: auto;
+    background: rgba(0, 0, 0, 0.6);
+    .dialog {
+        position: absolute;
+        border: 1px solid rgba(247, 241, 240, 1);
+        border-radius: 5px;
+        color: #303952;
+        padding: 10px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: space-between;
+        background: rgb(250, 250, 250);
+        min-width: 200px;
+        min-height: 100px;
+        // overflow: auto;
+        .dialog-header {
+            // display: flex;
+            // justify-content: space-between;
+            // align-items: center;
+            margin-bottom: 8px;
+            font-size: 14px;
+            .dialog__title {
+                font-weight: 600;
+            }
+            .dialog__headerbtn {
+                background: transparent;
+                border-color: transparent;
+                padding: 0;
+                outline: none;
+                float: right;
+                .icon-close {
+                    color: #303952;
+                    cursor: pointer;
+                    transition: all 0.1s linear;
+                    &:hover {
+                        color: #ff3f34;
+                    }
+                }
+            }
+        }
+        .dialog-body {
+            // flex: 1;
+        }
+    }
+    // 夜间模式
+    .dialog-dark {
+        border-color: #3d3d3d;
+        background: #3d3d3d;
+        color: #fff;
+        .dialog-header {
+            .dialog__headerbtn {
+                .icon-close {
+                    color: #fff;
+                    cursor: pointer;
+                    transition: all 0.1s linear;
+                    &:hover {
+                        color: #ef5777;
+                    }
+                }
+            }
+        }
+    }
+
+    // 进入/离开 动画
+    .dialog-fade-enter-active,
+    .dialog-fade-leave-active {
+        transition: all 0.3s linear;
+    }
+    .dialog-fade-enter {
+        opacity: 0;
+        top: 48%;
+    }
+}
