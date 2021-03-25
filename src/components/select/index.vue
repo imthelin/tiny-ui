@@ -138,7 +138,7 @@ export default {
 
         toggle() {
             if (this.disabled) return
-            ;(this.show && this.hideSel()) || this.showSel()
+            (this.show && this.hideSel()) || this.showSel()
         }
     }
 }

@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div class="ui-container">
-      <div class="title"><span>进度条展示: </span></div>
+      <div @click="showMsg" class="title"><span>进度条展示: </span></div>
       <TheProgress :achieve-value="66" :target-value="34"></TheProgress>
     </div>
   </div>
@@ -17,6 +17,14 @@ export default {
   name: 'App',
   components: {
     TheProgress
+  },
+  methods: {
+    showMsg() {
+      this.$message({
+        type: 'warn',
+        message: 'hello plugin'
+      })
+    }
   }
 }
 </script>
