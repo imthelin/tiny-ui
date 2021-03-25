@@ -1,0 +1,32 @@
+.input-wrapper {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    .input {
+        width: 100%;
+        height: 100%;
+        color: #333333;
+        background: #ffffff;
+        outline-style: none;
+        padding: 14px 14px;
+        font-size: 16px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+    }
+    .input:focus {
+        border-color: #ff3f34;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+            0 0 8px rgba(168, 50, 50, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+            0 0 8px rgba(168, 50, 50, 0.6);
+    }
+    .input-disabled {
+        background-color: rgba(0, 0, 0, 0.04);
+        color: rgba(0, 0, 0, 0.25);
+    }
+}
